@@ -30,15 +30,12 @@ public class JobForm {
      */
 
     @NotNull
-    @Size(min=1, message = "Location may not be empty, remote is an option")
     private Location location;
 
     @NotNull
-    @Size(min=1, message = "The position must have a description")
     private PositionType positionType;
 
     @NotNull
-    @Size(min=1, message = "You must enter a skill")
     private CoreCompetency coreCompetency;
 
 
