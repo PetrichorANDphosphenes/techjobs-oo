@@ -23,10 +23,24 @@ public class JobForm {
     private int employerId;
 
     /*
-        TODO #3 - Included other fields needed to create a job,
+        TODO #3 - done? - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
+        ### -- Check this -- ### but it should be done
      */
+
+    @NotNull
+    @Size(min=1, message = "Location may not be empty, remote is an option")
+    private Location location;
+
+    @NotNull
+    @Size(min=1, message = "The position must have a description")
+    private PositionType positionType;
+
+    @NotNull
+    @Size(min=1, message = "You must enter a skill")
+    private CoreCompetency coreCompetency;
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -39,7 +53,13 @@ public class JobForm {
 
         /*
             TODO #4 - populate the other ArrayList collections needed in the view
+            ### - - Is this right Kev?  find out and confirm - - ###
         */
+        locations = jobData.getLocations().findAll();
+
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+
+        positionTypes = jobData.getPositionTypes().findAll();
 
         employers = jobData.getEmployers().findAll();
 
@@ -59,6 +79,30 @@ public class JobForm {
 
     public void setEmployerId(int employerId) {
         this.employerId = employerId;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
     }
 
     public ArrayList<Employer> getEmployers() {

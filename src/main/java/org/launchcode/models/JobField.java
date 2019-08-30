@@ -3,7 +3,7 @@ package org.launchcode.models;
 /**
  * Created by LaunchCode
  */
-public class JobField {
+public class    JobField {
 
     private String value;
     private int id;

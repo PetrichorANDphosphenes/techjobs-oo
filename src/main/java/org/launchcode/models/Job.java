@@ -7,6 +7,7 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
+    //static makes it so that this is the same through every instance of Job
 
     private String name;
     private Employer employer;
@@ -78,6 +79,8 @@ public class Job {
 
     @Override
     public boolean equals(Object o) {
+        //example  .equals() returns bool t/f
+        //myJob.equals(whole job object to test)
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 

@@ -1,5 +1,7 @@
 package org.launchcode.controllers;
 
+import org.launchcode.models.Job;
+import org.launchcode.models.JobFieldType;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
@@ -23,7 +25,10 @@ public class JobController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, int id) {
 
-        // TODO #1 - get the Job with the given ID and pass it into the view
+        // TODO #1 - done - get the Job with the given ID and pass it into the view
+        //get the job by the id then add the job to the model
+        Job singleJob = jobData.findById(id);
+        model.addAttribute("job", singleJob);
 
         return "job-detail";
     }
